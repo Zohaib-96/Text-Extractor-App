@@ -2,8 +2,8 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 object RetrofitInstance {
-    private const val BASE_URL = "https://pmanavison.cognitiveservices.azure.com/"
-
+    //- Replace `YOUR_AZURE_ENDPOINT` with your actual endpoint.
+    private const val BASE_URL = "YOUR_AZURE_ENDPOINT"
     private val retrofit: Retrofit by lazy {
         Retrofit.Builder()
             .baseUrl(BASE_URL)

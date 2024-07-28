@@ -38,8 +38,8 @@ import java.io.IOException
 class MainActivity : AppCompatActivity() {
     lateinit var binding: ActivityMainBinding
     private val GALLERY_REQUEST_CODE = 102
-    // Replace it with your Key
-    private val apiKey = "Your-key"
+    // - Replace `YOUR_API_KEY` with your actual subscription key.
+    private val YOUR_API_KEY = "Your-key"
     private lateinit var imageUri: Uri
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -100,7 +100,7 @@ class MainActivity : AppCompatActivity() {
         // set text to be selectable
         binding.imgText.setTextIsSelectable(true)
 
-        // Tap Icon To Copy Text From TextView
+        // Tap Copy Icon To Copy Text From TextView
         binding.copyText.setOnClickListener {
             val clipboard = getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
             clipboard.text = binding.imgText.text
@@ -170,7 +170,7 @@ class MainActivity : AppCompatActivity() {
     private fun uploadImageToAzure(imageBytes: ByteArray) {
         val requestBody =
             RequestBody.create("application/octet-stream".toMediaTypeOrNull(), imageBytes)
-        val call = RetrofitInstance.azureOCRService.analyzeImage(apiKey, requestBody)
+        val call = RetrofitInstance.azureOCRService.analyzeImage(YOUR_API_KEY, requestBody)
         call.enqueue(object : Callback<OCRResponse> {
             override fun onResponse(call: Call<OCRResponse>, response: Response<OCRResponse>) {
                 if (response.isSuccessful) {

@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Text Extracter</string>
+    <string name="texts">
+        Lorem Ipsum is ,
+        standard dummy text ever ,
+        type specimen book.
+        essentially unchanged.
+        essentially unchanged.
+
+    </string>
+</resources>
